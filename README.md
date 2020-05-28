@@ -12,5 +12,5 @@ salmon index -t transcript.fa -i salmon-index
 ```
 ### quantification
 ```
-ls *_1.fastq.gz | sed 's/_1.fastq.gz//' | salmon -i salmon-index -l A -1 {}_1.fastq.gz -2 {}_2.fastq.gz -o {}
+ls *_1.fastq.gz | sed 's/_1.fastq.gz//' | xargs -i salmon -i salmon-index -l A -1 {}_1.fastq.gz -2 {}_2.fastq.gz -o {}
 ```
