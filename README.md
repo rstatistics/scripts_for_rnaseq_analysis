@@ -19,3 +19,7 @@ salmon index -t transcript.fa -i salmon-index
 ls *_1.fastq.gz | sed 's/_1.fastq.gz//' | \
         xargs -i salmon quant -i salmon-index -l A -1 {}_1.fastq.gz -2 {}_2.fastq.gz -o {}
 ```
+### bedToGene
+```bash
+bedtools intersect -wa -wb -a bed -b gene.gtf|perl -ne 'if(/gene_id "(\S+?)"/){print $1,"\n"}'|sort -u > GeneList
+```
