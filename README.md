@@ -1,6 +1,11 @@
 # scripts_for_rnaseq_analysis
 This repo contains scripts to analyze rnaseq data
 
+### remove large files with rsync
+Asume targets is our directory to delete, make a empty directory and run the following command:
+```bash
+rsync --delete-before --force -d empty/ targets/
+```
 ### vlookup function in unix
 Table_1.txt
 ```
